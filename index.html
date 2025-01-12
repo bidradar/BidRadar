@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BidRadar - AI Agent Analytics</title>
+
+<!-- Fonts and Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<!-- Custom Styles -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Header -->
+<header>
+    <div class="container header-content">
+        <div class="logo">
+            <img src="logo.jpeg" alt="BidRadar" style="width: 32px; height: auto; margin-right: 8px; vertical-align: middle;">
+            <span style="font-size: 1.5rem; font-weight: 700;">BidRadar</span>
+        </div>
+        <div class="header-actions">
+            <!-- Theme Toggle -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="container">
+    <!-- Filters and Controls -->
+    <div class="controls">
+        <!-- Sorting Tabs -->
+        <div class="tabs" id="sortTabs">
+            <button class="tab active" data-sort="createdAt">
+                <i class="fas fa-calendar"></i>
+                Creation Date
+            </button>
+            <button class="tab" data-sort="bumpOrder">
+                <i class="fas fa-arrow-trend-up"></i>
+                Bump Order
+            </button>
+            <button class="tab" data-sort="marketCap">
+                <i class="fas fa-chart-line"></i>
+                Market Cap
+            </button>
+        </div>
+
+        <!-- Filter Options -->
+        <div class="filters">
+            <div class="input-group">
+                <label for="itemsPerPage">Items per page:</label>
+                <input type="number" 
+                       id="itemsPerPage" 
+                       min="1" 
+                       max="50" 
+                       value="6"
+                       aria-label="Number of items per page">
+            </div>
+            <div class="input-group">
+                <label for="sortDirection">Sort direction:</label>
+                <select id="sortDirection" aria-label="Sort direction">
+                    <option value="desc">Descending</option>
+                    <option value="asc">Ascending</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Message Container -->
+    <div class="error" id="errorMessage" role="alert"></div>
+
+    <!-- Agents Grid -->
+    <div class="agents-grid" id="agentsGrid" role="grid">
+        <!-- Agent cards will be dynamically inserted here -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination" role="navigation">
+        <!-- Pagination controls will be dynamically inserted here -->
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container footer-content">
+        <div class="footer-left">
+            <div class="copyright">
+                <span class="year">2024</span>
+                <span class="brand">BidRadar</span>
+                <span class="divider">|</span>
+                <span class="rights">Building the future of AI agents</span>
+            </div>
+        </div>
+        <div class="footer-center">
+            <div class="contract-container">
+                <div class="contract-label">Smart Contract</div>
+                <div class="contract-wrapper">
+                    <code class="contract-address">0x70566921e92ceb43551dd6bf1d9bc31bdade30f8</code>
+                    <button class="copy-btn" data-clipboard="0x70566921e92ceb43551dd6bf1d9bc31bdade30f8">
+                        <span class="default-icon"><i class="far fa-copy"></i></span>
+                        <span class="success-icon"><i class="fas fa-check"></i></span>
+                        <span class="tooltip">Copy to clipboard</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="social-links">
+                <a href="https://t.me/bidradar" target="_blank" class="social-link">
+                    <i class="fab fa-telegram"></i>
+                    Telegram
+                </a>
+                <a href="https://x.com/bidradar" target="_blank" class="social-link">
+                    <i class="fab fa-x-twitter"></i>
+                    Twitter
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="script.js" defer></script>
+</body>
+</html>
